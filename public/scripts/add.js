@@ -15,6 +15,6 @@ define(function(require, exports, module) {
 		})
 		
 		//阻止默认行为
-		return fales;
+		return false;
 	})
 })
