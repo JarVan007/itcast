@@ -10,11 +10,17 @@ define(function(require, exports, module) {
 
 		$.ajax({
 			url: '/teacher/add',
-			type: 'post',
-			data: formdata
-		})
+			type: 'POST',
+			data: formdata,
+			success: function (data) {
+				alert(data.msg);
+				if (data.code == 10000) {
+					location.reload();
+				}
+			}
+		});
 		
 		//阻止默认行为
-		return fales;
+		return false;
 	})
 })
