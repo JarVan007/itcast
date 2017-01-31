@@ -20,7 +20,7 @@ define(function(require, exports, module) {
 
 		if (pathname.lastIndexOf(href) == 1) {
 			_this.addClass("active");
-			_this.next(ul).show();
+			_this.next("ul").show();
 			return;
 		}
 	})

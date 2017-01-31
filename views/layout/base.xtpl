@@ -18,6 +18,9 @@
 	
 	{{{block ('template')}}}
 	<script src="/libs/sea.js"></script>
+
+	{{{block ('script')}}}
+
 	<script>
 		
 		seajs.config({
