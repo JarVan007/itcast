@@ -1,4 +1,6 @@
+//第三方模块
 var express = require('express');
+var bodyParser = require('body-parser');
 
 //加载子路由
 var index = require('./controllers/index');
@@ -12,6 +14,10 @@ var app = express();
 app.set('views', __dirname + '/views');
 
 app.set('view engine', 'xtpl');
+
+//设置body-parser插件中间件
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 //设置静态资源
 app.use('/', express.static('public'));
