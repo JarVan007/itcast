@@ -20,11 +20,24 @@ router.get('/',function(req, res){
 	})
 });
 
+//显示添加讲师页面
 router.get('/add',function(req, res){
 	res.render('teachers/add',{})
 });
 
-//添加讲师
+//显示编辑页面
+router.get('/edit/:tc_id',function(req, res){
+	//获取讲师id
+	var tc_id = req.params.tc_id;
+
+	tcModel.find(tc_id, function (err, result) {
+		if(err) return;
+		
+		res.render('teachers/add', {teachers: result});
+	})
+});
+
+//添加讲师功能
 router.post('/add',function(req, res){
 	var body = req.body;
 	tcModel.add(body, function (err, result) {
@@ -36,3 +49,4 @@ router.post('/add',function(req, res){
 		});
 	});
 });
+
