@@ -50,7 +50,7 @@
 								<td>
 									<a href="javascript:;" data-toggle="modal" class="btn btn-info btn-xs preview">查 看</a>
 									<a href="/teacher/edit/{{this.tc_id}}" class="btn btn-info btn-xs">编 辑</a>
-									<a href="javascript::" class="btn btn-warning btn-xs">注 销</a>
+									<a href="javascript:;" class="btn btn-warning btn-xs delete" tc-id="{{this.tc_id}}">注 销</a>
 								</td>
 							</tr>
 							{{/each}}
@@ -117,6 +117,7 @@
 	<script>
 		
 		seajs.use('/scripts/teachers/show');
+		seajs.use('/scripts/teachers/delete');
 
 	</script>
 {{/block}}

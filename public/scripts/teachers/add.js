@@ -8,8 +8,10 @@ define(function(require, exports, module) {
 		//serialize()方法会忽略没有name属性的表单
 		var formdata = $(this).serialize();
 
+		var url = $(this).attr('action');
+		
 		$.ajax({
-			url: '/teacher/add',
+			url: url,
 			type: 'POST',
 			data: formdata,
 			success: function (data) {

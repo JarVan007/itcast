@@ -25,17 +25,6 @@ router.get('/add',function(req, res){
 	res.render('teachers/add',{})
 });
 
-//显示编辑页面
-router.get('/edit/:tc_id',function(req, res){
-	//获取讲师id
-	var tc_id = req.params.tc_id;
-
-	tcModel.find(tc_id, function (err, result) {
-		if(err) return;
-		
-		res.render('teachers/add', {teachers: result});
-	})
-});
 
 //添加讲师功能
 router.post('/add',function(req, res){
@@ -50,3 +39,42 @@ router.post('/add',function(req, res){
 	});
 });
 
+//显示编辑页面
+router.get('/edit/:tc_id',function(req, res){
+	//获取讲师id
+	var tc_id = req.params.tc_id;
+
+	tcModel.find(tc_id, function (err, result) {
+		if(err) return;
+		
+		res.render('teachers/add', {teacher: result[0]});
+	})
+});
+
+//编辑讲师功能
+router.post('/edit',function(req, res){
+	var body = req.body;
+	console.log(body);
+	tcModel.edit(body, function (err, result) {
+		if(err) return;
+		res.json({
+			code: 10000,
+			msg: "数据修改成功！",
+			result: {}
+		});
+	});
+});
+
+//删除讲师功能
+//一般都是改变数据库中的一个状态码让其不显示不会真删除数据
+router.post('/delete',function(req, res){
+	var body = req.body;
+	tcModel.delete(body, function (err, result) {
+		if(err) return;
+		res.json({
+			code: 10000,
+			msg: "删除成功！",
+			result: {}
+		});
+	});
+});
