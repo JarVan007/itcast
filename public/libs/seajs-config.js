@@ -4,9 +4,16 @@
 		base: "/assets",
 		alias: {
 			jquery: "jquery/jquery",
-			bootstrap: "bootstrap/js/bootstrap",
 			validate: "jquery-validate/jquery-validate",
 			form: "jquery-form/jquery-form",
+
+			bootstrap: "bootstrap/js/bootstrap",
+			datepicker: "bootstrap-datepicker/js/bootstrap-datepicker",
+			language: "bootstrap-datepicker/js/bootstrap-datepicker.zh-CN.min",
+			
+			nprogress: "nprogress/nprogress",
+			arttemplate: "art-template/template-native"
+			
 		},
 		preload: ['/scripts/common', 'bootstrap']
 	});

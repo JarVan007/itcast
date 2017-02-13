@@ -54,7 +54,6 @@ router.get('/edit/:tc_id',function(req, res){
 //编辑讲师功能
 router.post('/edit',function(req, res){
 	var body = req.body;
-	console.log(body);
 	tcModel.edit(body, function (err, result) {
 		if(err) return;
 		res.json({
@@ -77,4 +76,16 @@ router.post('/delete',function(req, res){
 			result: {}
 		});
 	});
+});
+
+//查看讲师界面(取数据)
+router.post('/preview',function(req, res){
+	//获取讲师id
+	var tc_id = req.body.tc_id;
+
+	tcModel.find(tc_id, function (err, result) {
+		if(err) return;
+		
+		res.json(result[0]);
+	})
 });

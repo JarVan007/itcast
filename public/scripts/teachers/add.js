@@ -7,6 +7,10 @@ define(function(require, exports, module) {
 
 	require("form");
 
+	require("datepicker");
+	
+	require("language");
+
 	$("#addTeacher").validate({
 		onKeyup: true, //何种条件触发验证
 

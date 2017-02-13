@@ -1,6 +1,11 @@
 define(function(require, exports, module) {
 
-	var $ = require("jquery");
+	var $ = require('jquery');
+
+	var NProgress = require('nprogress');
+
+	NProgress.start();
+	NProgress.done();
 
 	$(".navs a").on("click", function() {
 
