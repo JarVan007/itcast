@@ -19,22 +19,10 @@
 	{{{block ('template')}}}
 
 	<script src="/libs/sea.js"></script>
+	<script src="/libs/seajs-preload.js"></script>
+	<script src="/libs/seajs-config.js"></script>
 
 	{{{block ('script')}}}
-
-	<script>
-		
-		seajs.config({
-			base:"/assets",
-			alias:{
-				jquery:"jquery/jquery.js",
-				bootstrap:"bootstrap/js/bootstrap.js"
-			}
-		});
-
-		seajs.use('/scripts/common');
-
-	</script>
 
 
 </body>

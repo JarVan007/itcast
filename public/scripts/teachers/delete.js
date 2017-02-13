@@ -1,7 +1,7 @@
 
 define(function(require, exports, module) {
 
-	var $ = require("jquery");
+	<!-- var $ = require("jquery"); -->
 
 	$('#teacherList').on("click","a.delete",function () {
 
